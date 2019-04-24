@@ -8,6 +8,7 @@ import Login from './containers/LoginView/Login.js'
 import TopArtists from './components/TopArtists.js'
 import TopTracks from './components/TopTracks.js'
 import Profile from './components/Profile.js'
+import About from './components/About.js'
 
 
 class App extends Component {
@@ -25,7 +26,7 @@ class App extends Component {
         <Router>
           <div>
             <div>
-              <NavLink activeClassName="active" exact to="/">Home</NavLink>{' '}
+              <NavLink activeClassName="active" exact to="/app">Home</NavLink>{' '}
               <NavLink activeClassName="active" to="/top-artists">Top Artists</NavLink>{' '}
               <NavLink activeClassName="active" to="/top-tracks">Top Tracks</NavLink>{' '}
               <NavLink activeClassName="active" to="/profile">Profile</NavLink>{' '}
@@ -33,6 +34,7 @@ class App extends Component {
 
             <div>
               <Route exact path="/" component={Login}/>
+              <Route path="/app" component={About}/>
               <Route
                 path="/top-artists"
                 render={(props) => <TopArtists artists={this.state.in_artist}/>}
