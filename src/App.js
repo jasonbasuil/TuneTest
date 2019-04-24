@@ -6,10 +6,18 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
 import Login from './containers/LoginView/Login.js'
 import TopArtists from './components/TopArtists.js'
+import TopTracks from './components/TopTracks.js'
 import Profile from './components/Profile.js'
 
 
 class App extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      in_artist: 'yes we can!'
+    }
+  }
 
   render() {
     return (
@@ -17,14 +25,19 @@ class App extends Component {
         <Router>
           <div>
             <div>
-                <NavLink activeClassName="active" exact to="/">Home</NavLink>{' '}
-                <NavLink activeClassName="active" to="/top-artists">Top Artists</NavLink>{' '}
-                <NavLink activeClassName="active" to="/profile">Profile</NavLink>{' '}
+              <NavLink activeClassName="active" exact to="/">Home</NavLink>{' '}
+              <NavLink activeClassName="active" to="/top-artists">Top Artists</NavLink>{' '}
+              <NavLink activeClassName="active" to="/top-tracks">Top Tracks</NavLink>{' '}
+              <NavLink activeClassName="active" to="/profile">Profile</NavLink>{' '}
             </div>
 
             <div>
               <Route exact path="/" component={Login}/>
-              <Route path="/top-artists" component={TopArtists} />
+              <Route
+                path="/top-artists"
+                render={(props) => <TopArtists artists={this.state.in_artist}/>}
+              />
+              <Route path="/top-tracks" component={TopTracks} />
               <Route path="/profile" component={Profile} />
             </div>
           </div>
