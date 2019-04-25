@@ -4,12 +4,6 @@ import TopArtistCard from '../../components/TopArtistCard.js'
 
 class CardArea extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
-
-
   render() {
     return (
       <div>
