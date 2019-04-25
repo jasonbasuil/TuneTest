@@ -14,20 +14,34 @@ class GameView extends Component {
     }
   }
 
+  topArtistNames = () => {
+    let topArtistNames = [];
+    this.props.topArtists.items.map((artist => {
+      topArtistNames.push(artist.name.toLowerCase())
+    }))
+    return topArtistNames
+  }
+
   handleChange = (ev) => {
     console.log('handling change')
     this.setState({guess: ev.target.value })
   }
 
-  handleSubmit = () => {
+  handleGuessSubmit = (ev) => {
     console.log('handling submit')
+    ev.preventDefault()
+    let topArtistNames = this.topArtistNames()
+    console.log(topArtistNames)
+    if (topArtistNames.includes(this.state.guess.toLowerCase())){
+      console.log('correct!')
+    }
   }
 
   render() {
     return (
       <div>
         <h2>We're in GameView</h2>
-        <GuessForm handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
+        <GuessForm handleChange={this.handleChange} handleGuessSubmit={this.handleGuessSubmit}/>
         <CardArea topArtists={this.props.topArtists}/>
         <LogView />
         <ScoreView />
