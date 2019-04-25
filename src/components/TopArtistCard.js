@@ -10,9 +10,7 @@ class TopArtistCard extends Component {
     imgUrl = this.props.topArtist.images[2].url
     artistName = this.props.topArtist.name
   }
-
-
-
+  
   render() {
     return (
       <div>
