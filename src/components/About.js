@@ -1,9 +1,36 @@
 import React, { Component } from 'react';
 
+const usersAPI = 'http://localhost:3000/api/v1/users/1'
+
 class About extends Component {
 
-  componentDidMount() {
+  constructor() {
+    super()
+    this.state = {
+      currentUser: '',
+      currentUserAccessToken: '',
+      currentUserRefreshToken: ''
+    }
+  }
 
+  //http://localhost:3000/api/v1/users/1
+  //need to get the user that just got redirected (is it necessarily the newest in DB?)
+
+  //Fetch a user that just signed in and set their name and tokens to localStorage
+  fetchUserThatJustSignedIn = () => {
+    console.log('handling session')
+    fetch(usersAPI)
+    .then(res => res.json())
+    .then((user) => {
+      localStorage.setItem('currentUser', user.name);
+      localStorage.setItem('currentUserAccessToken', user.access_token);
+      localStorage.setItem('currentUserRefreshToken', user.refresh_token);
+      }
+    )
+  }
+
+  componentDidMount() {
+    this.fetchUserThatJustSignedIn()
   }
 
   render() {
