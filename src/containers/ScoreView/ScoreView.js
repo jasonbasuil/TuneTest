@@ -6,7 +6,7 @@ class ScoreView extends Component {
     return (
       <div>
         <h2>Score view</h2>
-        <h3>Score: 200</h3>
+        <h3>Score: {this.props.score}</h3>
       </div>
     )
   }
