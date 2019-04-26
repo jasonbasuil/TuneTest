@@ -6,11 +6,14 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
 import Login from './containers/LoginView/Login.js'
 import GameView from './containers/GameView/GameView.js'
-import TopTracks from './components/TopTracks.js'
-import Profile from './components/Profile.js'
+import GameView_TopTracks from './containers/GameView_TopTracks/GameView_TopTracks.js'
+
+import ProfileView from './containers/ProfileView/ProfileView.js'
 import About from './components/About.js'
 
 const topArtistsAPI = 'https://api.spotify.com/v1/me/top/artists'
+const topTracksAPI = 'https://api.spotify.com/v1/me/top/tracks'
+const userProfileAPI = 'https://api.spotify.com/v1/users/'
 
 
 class App extends Component {
@@ -19,16 +22,20 @@ class App extends Component {
     super()
     this.state = {
       in_artist: 'yes we can!',
-      topArtists: []
+      topArtists: [],
+      topTracks: [],
+      userInfo: []
     }
   }
 
   componentDidMount() {
     console.log(localStorage.getItem('currentUserAccessToken'))
-    this.fetchtopArtists()
+    this.fetchTopArtists()
+    this.fetchTopTracks()
+    this.fetchUserProfile()
   }
 
-  fetchtopArtists = () => {
+  fetchTopArtists = () => {
     fetch(topArtistsAPI, {
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('currentUserAccessToken')
@@ -38,6 +45,32 @@ class App extends Component {
     .then(topArtists => {
       console.log(topArtists)
       this.setState({topArtists: topArtists})
+    })
+  }
+
+  fetchTopTracks = () => {
+    fetch(topTracksAPI, {
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('currentUserAccessToken')
+      }
+    })
+    .then(res => res.json())
+    .then(topTracks => {
+      console.log(topTracks)
+      this.setState({topTracks: topTracks})
+    })
+  }
+
+  fetchUserProfile = () => {
+    console.log('fetching user profile')
+    fetch(userProfileAPI + localStorage.getItem('currentUserId'), {
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('currentUserAccessToken')
+      }
+    })
+    .then(res => res.json())
+    .then(user => {
+      this.setState({userInfo: user})
     })
   }
 
@@ -62,8 +95,13 @@ class App extends Component {
                 path="/top-artists"
                 render={(props) => <GameView topArtists={this.state.topArtists}/>}
               />
-              <Route path="/top-tracks" component={TopTracks} />
-              <Route path="/profile" component={Profile} />
+              <Route path="/top-tracks"
+                render={(props) => <GameView_TopTracks topTracks={this.state.topTracks}/>}
+              />
+              <Route
+                path="/profile"
+                render={(props) => <ProfileView userInfo={this.state.userInfo}/>}
+              />
             </div>
           </div>
         </Router>

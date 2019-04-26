@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 import GuessForm from '../../components/GuessForm.js'
-import CardArea from '../CardArea/CardArea.js'
+import CardArea_TopTracks from '../CardArea/CardArea_TopTracks.js'
 import LogView from '../LogView/LogView.js'
 import ScoreView from '../ScoreView/ScoreView.js'
 
 
-class GameView extends Component {
+class GameView_TopTracks extends Component {
 
   constructor(props) {
     super(props);
@@ -16,10 +16,10 @@ class GameView extends Component {
     }
   }
 
-  topArtistNames = () => {
-    let topArtistNames = this.props.topArtists.items.map((artist => {
-      return artist.name.toLowerCase()}))
-    return topArtistNames
+  topTrackNames = () => {
+    let topTrackNames = this.props.topTracks.items.map((track => {
+      return track.name.toLowerCase()}))
+    return topTrackNames
   }
 
   handleChange = (ev) => {
@@ -30,9 +30,9 @@ class GameView extends Component {
   handleGuessSubmit = (ev) => {
     console.log('handling submit')
     ev.preventDefault()
-    let topArtistNames = this.topArtistNames()
-    console.log(topArtistNames)
-    if (topArtistNames.includes(this.state.guess.toLowerCase())){
+    let topTrackNames = this.topTrackNames()
+    console.log(topTrackNames)
+    if (topTrackNames.includes(this.state.guess.toLowerCase())){
       console.log('correct!')
       this.setState({score: this.state.score + 200})
       //change an artist card's view to "showing"
@@ -43,22 +43,22 @@ class GameView extends Component {
 
   showAlbumCover = () => {
     let guess = this.state.guess.toLowerCase()
-    let artistImg;
-    this.props.topArtists.items.map((artist) => {
-      if (artist.name.toLowerCase() === guess) {
-        artistImg =  artist.images[2].url
+    let trackImg;
+    this.props.topTracks.items.map((track) => {
+      if (track.name.toLowerCase() === guess) {
+        trackImg =  track.album.images[1].url
       }
     })
     let correctCard = document.getElementById(guess)
-    correctCard.src= artistImg
+    correctCard.src= trackImg
   }
 
   render() {
     return (
-      <div>  
+      <div>
         <h2>We're in Top Artists GameView</h2>
         <GuessForm handleChange={this.handleChange} handleGuessSubmit={this.handleGuessSubmit}/>
-        <CardArea topArtists={this.props.topArtists}/>
+        <CardArea_TopTracks topTracks={this.props.topTracks}/>
         <LogView />
         <ScoreView score={this.state.score}/>
       </div>
@@ -66,4 +66,4 @@ class GameView extends Component {
   }
 }
 
-export default GameView
+export default GameView_TopTracks

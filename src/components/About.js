@@ -23,6 +23,7 @@ class About extends Component {
     .then(res => res.json())
     .then((user) => {
       localStorage.setItem('currentUser', user.name);
+      localStorage.setItem('currentUserId', user.spotify_id);
       localStorage.setItem('currentUserAccessToken', user.access_token);
       localStorage.setItem('currentUserRefreshToken', user.refresh_token);
       }
