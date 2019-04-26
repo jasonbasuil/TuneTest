@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import TopArtistCard from '../../components/TopArtistCard.js'
 
-class CardArea extends Component {
+class CardArea_TopArtists extends Component {
 
   render() {
     return (
@@ -16,4 +16,4 @@ class CardArea extends Component {
   }
 }
 
-export default CardArea
+export default CardArea_TopArtists

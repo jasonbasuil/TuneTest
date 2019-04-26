@@ -5,8 +5,8 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
 import Login from './containers/LoginView/Login.js'
-import GameView from './containers/GameView/GameView.js'
-import GameView_TopTracks from './containers/GameView_TopTracks/GameView_TopTracks.js'
+import GameView_TopArtists from './containers/GameView/GameView_TopArtists.js'
+import GameView_TopTracks from './containers/GameView/GameView_TopTracks.js'
 
 import ProfileView from './containers/ProfileView/ProfileView.js'
 import About from './components/About.js'
@@ -29,7 +29,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log(localStorage.getItem('currentUserAccessToken'))
     this.fetchTopArtists()
     this.fetchTopTracks()
     this.fetchUserProfile()
@@ -43,7 +42,6 @@ class App extends Component {
     })
     .then(res => res.json())
     .then(topArtists => {
-      console.log(topArtists)
       this.setState({topArtists: topArtists})
     })
   }
@@ -56,13 +54,11 @@ class App extends Component {
     })
     .then(res => res.json())
     .then(topTracks => {
-      console.log(topTracks)
       this.setState({topTracks: topTracks})
     })
   }
 
   fetchUserProfile = () => {
-    console.log('fetching user profile')
     fetch(userProfileAPI + localStorage.getItem('currentUserId'), {
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('currentUserAccessToken')
@@ -93,7 +89,7 @@ class App extends Component {
               <Route path="/app" component={About}/>
               <Route
                 path="/top-artists"
-                render={(props) => <GameView topArtists={this.state.topArtists}/>}
+                render={(props) => <GameView_TopArtists topArtists={this.state.topArtists}/>}
               />
               <Route path="/top-tracks"
                 render={(props) => <GameView_TopTracks topTracks={this.state.topTracks}/>}

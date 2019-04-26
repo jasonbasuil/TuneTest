@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 class TopTrackCard extends Component {
 
   imgUrl = this.props.topTrack.album.images[1].url
-  artistName = this.props.topTrack.album.artists[0].name
-  trackName = this.props.topTrack.album.name
+  artistName = this.props.topTrack.artists[0].name
+  trackName = this.props.topTrack.name
+
 
   render() {
     return (

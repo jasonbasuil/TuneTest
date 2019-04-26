@@ -8,10 +8,8 @@ class CardArea_TopTracks extends Component {
     return (
       <div>
         {this.props.topTracks.items && this.props.topTracks.items.map((topTrack => {
-          console.log(topTrack)
           return <TopTrackCard key={topTrack.id} topTrack={topTrack}/>
         }))}
-
       </div>
     )
   }
