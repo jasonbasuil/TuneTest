@@ -18,7 +18,7 @@ class TopTrackCard extends Component {
         />
         <html lang="en" dir="ltr">
           <body id={this.trackName + 'a'}>
-            
+
           </body>
         </html>
         <h4>{this.trackName} - {this.artistName}</h4>
