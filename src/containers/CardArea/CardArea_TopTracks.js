@@ -9,9 +9,7 @@ class CardArea_TopTracks extends Component {
     let trackName = ev.target.id
 
     if (document.getElementById(trackName + 'a').childNodes.length > 0){
-      let elementToRemove = document.getElementById(trackName + '_is_active')
-      elementToRemove.parentNode.removeChild(elementToRemove)
-      return console.log('already a player')
+      return this.removePlayPreview(ev)
     }
     trackName = ev.target.id
     let player = document.createElement("audio")
@@ -20,9 +18,18 @@ class CardArea_TopTracks extends Component {
     player.controls = true
     player.autoplay = true
     player.type = "audio/mpeg"
+    player.style = "display:none;"
 
     let playerDiv = document.getElementById(trackName + 'a')
     playerDiv.appendChild(player)
+  }
+
+  removePlayPreview = (ev) => {
+    ev.preventDefault()
+    let trackName = ev.target.id
+    let elementToRemove = document.getElementById(trackName + '_is_active')
+    elementToRemove.parentNode.removeChild(elementToRemove)
+    return console.log('already a player')
   }
 
   render() {
