@@ -8,6 +8,7 @@ class CardArea_TopTracks extends Component {
   handlePlayPreview = (ev) => {
     let trackName = ev.target.id
 
+    //add 'a' just as a differentiator when player is rendered
     if (document.getElementById(trackName + 'a').childNodes.length > 0){
       return this.removePlayPreview(ev)
     }
