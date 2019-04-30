@@ -13,6 +13,10 @@ class CardArea_TopTracks extends Component {
       return this.removePlayPreview(ev)
     }
     trackName = ev.target.id
+
+    let image = ev.target
+    image.src = "https://d2814gcejiq38s.cloudfront.net/wp-content/uploads/2018/11/play-button-image.png"
+
     let player = document.createElement("audio")
     player.id = trackName + '_is_active'
     player.src = ev.target.alt
@@ -30,6 +34,9 @@ class CardArea_TopTracks extends Component {
     let trackName = ev.target.id
     let elementToRemove = document.getElementById(trackName + '_is_active')
     elementToRemove.parentNode.removeChild(elementToRemove)
+
+    let image = ev.target
+    image.src = "https://dashboard.snapcraft.io/site_media/appmedia/2017/12/spotify-linux-256.png"
     return console.log('already a player')
   }
 

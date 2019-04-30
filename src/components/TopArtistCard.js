@@ -13,7 +13,7 @@ class TopArtistCard extends Component {
       <div className="TopArtistCards">
         <img
           id={this.artistName}
-          src={"http://www.harveymaria.com/core/media/media.nl?id=68014&c=626987&h=1bdd59d4f929586d63cd"}
+          src={"https://dashboard.snapcraft.io/site_media/appmedia/2017/12/spotify-linux-256.png"}
           alt={this.artistSpotifyId}
           onClick={this.props.handlePlayPreview()}
         />

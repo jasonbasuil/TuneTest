@@ -46,7 +46,7 @@ class GameView_TopArtists extends Component {
     let artistImg;
     this.props.topArtists.items.map((artist) => {
       if (artist.name.toLowerCase() === guess) {
-        artistImg =  artist.images[2].url
+        artistImg =  artist.images[1].url
       }
     })
     let correctCard = document.getElementById(guess)

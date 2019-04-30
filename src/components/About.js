@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const usersAPI = 'http://localhost:3000/api/v1/users/1'
+const usersAPI = 'http://localhost:3000/api/v1/users/2'
 
 class About extends Component {
 
@@ -22,6 +22,7 @@ class About extends Component {
     fetch(usersAPI)
     .then(res => res.json())
     .then((user) => {
+      console.log(user)
       localStorage.setItem('currentUser', user.name);
       localStorage.setItem('currentUserId', user.spotify_id);
       localStorage.setItem('currentUserAccessToken', user.access_token);

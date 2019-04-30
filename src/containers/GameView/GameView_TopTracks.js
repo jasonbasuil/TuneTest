@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
 import GuessForm from '../../components/GuessForm.js'
+import GameStart from '../../components/GameStart.js'
 import CardArea_TopTracks from '../CardArea/CardArea_TopTracks.js'
 import LogView from '../LogView/LogView.js'
 import ScoreView from '../ScoreView/ScoreView.js'
+
 
 
 class GameView_TopTracks extends Component {
@@ -56,6 +58,7 @@ class GameView_TopTracks extends Component {
     return (
       <div>
         <h2>We're in Top Artists GameView</h2>
+        <GameStart />
         <GuessForm handleChange={this.handleChange} handleGuessSubmit={this.handleGuessSubmit}/>
         <CardArea_TopTracks topTracks={this.props.topTracks}/>
         <LogView />

@@ -18,6 +18,7 @@ class CardArea_TopArtists extends Component {
     }}
   ).then(res => res.json())
   .then(topTracks => {
+    console.log(topTracks)
     this.getRandomTopTrack(topTracks)
   })
   }
@@ -39,6 +40,10 @@ class CardArea_TopArtists extends Component {
     if (document.getElementById(artistName + 'a').childNodes.length > 0){
       return this.removePlayPreview(artistName)
     }
+
+    let image = document.getElementById(artistName)
+    image.src = "https://d2814gcejiq38s.cloudfront.net/wp-content/uploads/2018/11/play-button-image.png"
+
     let player = document.createElement("audio")
     player.id = artistName + '_is_active'
     player.src = randomTrackPreviewUrl
@@ -49,11 +54,17 @@ class CardArea_TopArtists extends Component {
 
     let playerDiv = document.getElementById(artistName + 'a')
     playerDiv.appendChild(player)
+
+    //remove player if user hasn't clicked to stop
+    // setTimeout(() => {this.removePlayPreview(artistName)}, 30000);
   }
 
   removePlayPreview = (artistName) => {
     let elementToRemove = document.getElementById(artistName + '_is_active')
     elementToRemove.parentNode.removeChild(elementToRemove)
+
+    let image = document.getElementById(artistName)
+    image.src = "https://dashboard.snapcraft.io/site_media/appmedia/2017/12/spotify-linux-256.png"
     return console.log('already a player')
   }
 
