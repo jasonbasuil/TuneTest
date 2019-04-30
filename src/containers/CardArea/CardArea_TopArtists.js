@@ -71,7 +71,7 @@ class CardArea_TopArtists extends Component {
 
   render() {
     return (
-      <div>
+      <div class="card_row">
         {this.props.topArtists.items && this.props.topArtists.items.map((topArtist => {
           return <TopArtistCard
                     key={topArtist.id}

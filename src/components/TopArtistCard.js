@@ -10,7 +10,7 @@ class TopArtistCard extends Component {
 
   render() {
     return (
-      <div className="TopArtistCards">
+      <div class="card_column">
         <img
           id={this.artistName}
           src={"https://dashboard.snapcraft.io/site_media/appmedia/2017/12/spotify-linux-256.png"}

@@ -42,7 +42,7 @@ class CardArea_TopTracks extends Component {
 
   render() {
     return (
-      <div>
+      <div class="card_row">
         {this.props.topTracks.items && this.props.topTracks.items.map((topTrack => {
           return <TopTrackCard
                     key={topTrack.id}

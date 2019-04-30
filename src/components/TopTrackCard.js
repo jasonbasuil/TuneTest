@@ -11,6 +11,7 @@ class TopTrackCard extends Component {
     return (
       <div>
         <img
+          class="card_column"
           id={this.trackName}
           src={"https://dashboard.snapcraft.io/site_media/appmedia/2017/12/spotify-linux-256.png"}
           alt={this.previewUrl} //this is super hacky
