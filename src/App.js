@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import Login from './containers/LoginView/Login.js'
 import GameView_TopArtists from './containers/GameView/GameView_TopArtists.js'
 import GameView_TopTracks from './containers/GameView/GameView_TopTracks.js'
+import GameView_Search from './containers/GameView/GameView_Search.js'
 
 import ProfileView from './containers/ProfileView/ProfileView.js'
 import About from './components/About.js'
@@ -81,6 +82,7 @@ class App extends Component {
               <NavLink activeClassName="active" exact to="/app">Home</NavLink>{' '}
               <NavLink activeClassName="active" to="/top-artists">Top Artists</NavLink>{' '}
               <NavLink activeClassName="active" to="/top-tracks">Top Tracks</NavLink>{' '}
+              <NavLink activeClassName="active" to="/search">Search</NavLink>{' '}
               <NavLink activeClassName="active" to="/profile">Profile</NavLink>{' '}
               <NavLink activeClassName="active" to="/logout">Logout</NavLink>{' '}
             </div>
@@ -94,6 +96,9 @@ class App extends Component {
               />
               <Route path="/top-tracks"
                 render={(props) => <GameView_TopTracks topTracks={this.state.topTracks}/>}
+              />
+              <Route path="/search"
+                render={(props) => <GameView_Search />}
               />
               <Route
                 path="/profile"
