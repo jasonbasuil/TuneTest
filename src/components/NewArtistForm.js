@@ -5,8 +5,8 @@ class NewArtistForm extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.props.handleGuessSubmit}>
-          <input class="guess_form" value={this.props.guess} onChange={this.props.handleChange} type='text' placeholder='Search for a new Artist'/>
+        <form onSubmit={(ev) => this.props.handleNewArtistSubmit(ev)}>
+          <input class="artist_submit" value={this.props.guess} onChange={this.props.handleChange} type='text' placeholder='Search for a new Artist'/>
 
         </form>
       </div>

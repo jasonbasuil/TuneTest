@@ -61,6 +61,12 @@ p {
   padding: 5px;
 }
 
+.artist_submit {
+  width: 30%;
+  height: 36px;
+  font-size: 100%;
+}
+
 .guess_form {
   width: 30%;
   height: 30px;
