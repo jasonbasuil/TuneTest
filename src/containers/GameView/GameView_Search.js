@@ -63,10 +63,13 @@ class GameView_Search extends Component {
     }
   }
 
+  //may need the entire event
   showAlbumCover = () => {
     let guess = this.state.guess.toLowerCase()
     let trackImg;
-    this.topTrackNames().map((track) => {
+    console.log(this.topTrackNames())
+    
+    this.state.selectedArtistTopTracks.tracks.map((track) => {
       if (track.name.toLowerCase() === guess) {
         trackImg =  track.album.images[1].url
       }
