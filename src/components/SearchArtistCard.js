@@ -8,8 +8,10 @@ class SearchArtistCard extends Component {
   render() {
     return (
       <div>
-        <img src={this.props.artist.images[0] ? this.props.artist.images[1].url : 'nothing'}
-          alt={this.props.artist.name}
+        <img
+          src={this.props.artist.images[0] ? this.props.artist.images[1].url : 'nothing'}
+          alt={this.props.artist.id}
+          onClick={(ev) => {this.props.handleArtistSelect(ev)}}
         />
         <h4>{this.props.artist.name}</h4>
       </div>

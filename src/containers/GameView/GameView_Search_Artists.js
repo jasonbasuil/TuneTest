@@ -15,7 +15,10 @@ class GameView_Search_Artists extends Component {
     return (
       <div >
         {this.props.artists.artists && this.props.artists.artists.items.slice(0,1).map((artist => {
-          return <SearchArtistCard artist={artist}  />
+          return <SearchArtistCard
+                    artist={artist}
+                    handleArtistSelect={(ev) => {this.props.handleArtistSelect(ev)}}
+                 />
         }))}
       </div>
     )

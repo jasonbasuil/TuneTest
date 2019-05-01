@@ -6,7 +6,7 @@ class NewArtistForm extends Component {
     return (
       <div>
         <form onSubmit={(ev) => this.props.handleNewArtistSubmit(ev)}>
-          <input class="artist_submit" value={this.props.guess} onChange={this.props.handleChange} type='text' placeholder='Search for a new Artist'/>
+          <input class="artist_submit" value={this.props.guess} onChange={this.props.handleArtistChange} type='text' placeholder='Search for a new Artist'/>
 
         </form>
       </div>
