@@ -22,7 +22,8 @@ class TopTrackCard extends Component {
 
           </body>
         </html>
-        <h4>{this.trackName} - {this.artistName}</h4>
+
+
       </div>
 
     )
@@ -30,3 +31,5 @@ class TopTrackCard extends Component {
 }
 
 export default TopTrackCard
+
+// <h4>{this.trackName} - {this.artistName}</h4>

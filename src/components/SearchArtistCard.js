@@ -13,6 +13,7 @@ class SearchArtistCard extends Component {
           alt={this.props.artist.id}
           onClick={(ev) => {this.props.handleArtistSelect(ev)}}
         />
+        <p>Click artist to begin</p>
         <h4>{this.props.artist.name}</h4>
       </div>
 
