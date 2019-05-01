@@ -77,7 +77,7 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
-            <div>
+            <div class="navbar">
               <NavLink activeClassName="active" exact to="/app">Home</NavLink>{' '}
               <NavLink activeClassName="active" to="/top-artists">Top Artists</NavLink>{' '}
               <NavLink activeClassName="active" to="/top-tracks">Top Tracks</NavLink>{' '}

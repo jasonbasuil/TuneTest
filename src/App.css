@@ -1,26 +1,53 @@
-.App {
+
+.window {
+  height: 100%;
   text-align: center;
+  background-color: #f9ea8f;
+  background-image: linear-gradient(315deg, #f9ea8f 0%, #aff1da 74%);
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-family: Circular, Helvetica, Arial, sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 50px;
+  text-transform: none;
+  color: #FFFFFF;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h4 {
+  font-family: Circular, Helvetica, Arial, sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 50px;
+  text-transform: none;
+  color: #000000;
 }
 
-.App-link {
-  color: #61dafb;
+p {
+  font-family: Circular, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 5px;
+  line-height: 50px;
+  text-transform: none;
+  color: #000000;
+}
+
+.navbar {
+  font-family: Circular, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 5px;
+  line-height: 50px;
+  text-transform: none;
+  color: #000000;
 }
 
 .card_row {
@@ -32,4 +59,16 @@
 .card_column {
   flex: 33.33%;
   padding: 5px;
+}
+
+.guess_form {
+  width: 30%;
+  height: 30px;
+  font-size: 100%;
+}
+
+.guess_submit {
+  width: 15%;
+  height: 36px;
+  font-size: 100%;
 }

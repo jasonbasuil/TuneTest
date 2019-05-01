@@ -45,18 +45,26 @@ class GameView_TopArtists extends Component {
     let guess = this.state.guess.toLowerCase()
     let artistImg;
     this.props.topArtists.items.map((artist) => {
-      if (artist.name.toLowerCase() === guess) {
+      if (artist.name.toLowerCase() == guess) {
         artistImg =  artist.images[1].url
+        console.log(artist.name.toLowerCase())
+
+        let correctCard = document.getElementById(guess)
+        console.log(correctCard)
+        correctCard.src= artistImg
+        correctCard.onclick = null
+
       }
     })
-    let correctCard = document.getElementById(guess)
-    correctCard.src= artistImg
+
+    // document.getElementById(artist.name.toLowerCase()).onclick = null;
   }
 
   render() {
     return (
       <div>
-        <h2>We're in Top Artists GameView</h2>
+        <h1>Your Top Artists</h1>
+        <p>Guess an artist name:</p>
         <GuessForm handleChange={this.handleChange} handleGuessSubmit={this.handleGuessSubmit}/>
         <CardArea_TopArtists topArtists={this.props.topArtists}/>
         <LogView />

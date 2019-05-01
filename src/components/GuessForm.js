@@ -5,10 +5,9 @@ class GuessForm extends Component {
   render() {
     return (
       <div>
-        <h2>This is the guess form for the game</h2>
         <form onSubmit={this.props.handleGuessSubmit}>
-          <input onChange={this.props.handleChange} type='text' placeholder='Type your guess'/>
-          <input type='submit' />
+          <input class="guess_form" onChange={this.props.handleChange} type='text' placeholder='Type your guess'/>
+          <input class="guess_submit" type='submit' />
         </form>
       </div>
     )

@@ -57,8 +57,8 @@ class GameView_TopTracks extends Component {
   render() {
     return (
       <div>
-        <h2>We're in Top Artists GameView</h2>
-        <GameStart />
+        <h1>Your Top Tracks</h1>
+        <p>Guess a track name:</p>
         <GuessForm handleChange={this.handleChange} handleGuessSubmit={this.handleGuessSubmit}/>
         <CardArea_TopTracks topTracks={this.props.topTracks}/>
         <LogView />
