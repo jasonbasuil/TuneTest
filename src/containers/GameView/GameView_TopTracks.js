@@ -52,6 +52,7 @@ class GameView_TopTracks extends Component {
     })
     let correctCard = document.getElementById(guess)
     correctCard.src= trackImg
+    this.setState({guess: ''})
   }
 
   render() {
@@ -59,7 +60,10 @@ class GameView_TopTracks extends Component {
       <div>
         <h1>Your Top Tracks</h1>
         <p>Guess a track name:</p>
-        <GuessForm handleChange={this.handleChange} handleGuessSubmit={this.handleGuessSubmit}/>
+        <GuessForm
+          guess={this.state.guess}
+          handleChange={this.handleChange}
+          handleGuessSubmit={this.handleGuessSubmit}/>
         <CardArea_TopTracks topTracks={this.props.topTracks}/>
         <LogView />
         <ScoreView score={this.state.score}/>

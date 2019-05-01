@@ -39,6 +39,7 @@ class GameView_TopArtists extends Component {
       //grab this.artistName
       this.showAlbumCover()
     }
+    this.setState({guess: ''})
   }
 
   showAlbumCover = () => {
@@ -54,6 +55,8 @@ class GameView_TopArtists extends Component {
         correctCard.src= artistImg
         correctCard.onclick = null
 
+        this.setState({guess: ''})
+
       }
     })
 
@@ -65,7 +68,11 @@ class GameView_TopArtists extends Component {
       <div>
         <h1>Your Top Artists</h1>
         <p>Guess an artist name:</p>
-        <GuessForm handleChange={this.handleChange} handleGuessSubmit={this.handleGuessSubmit}/>
+        <GuessForm
+          guess={this.state.guess}
+          handleChange={this.handleChange}
+          handleGuessSubmit={this.handleGuessSubmit}
+        />
         <CardArea_TopArtists topArtists={this.props.topArtists}/>
         <LogView />
         <ScoreView score={this.state.score}/>
