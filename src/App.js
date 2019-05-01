@@ -82,6 +82,7 @@ class App extends Component {
               <NavLink activeClassName="active" to="/top-artists">Top Artists</NavLink>{' '}
               <NavLink activeClassName="active" to="/top-tracks">Top Tracks</NavLink>{' '}
               <NavLink activeClassName="active" to="/profile">Profile</NavLink>{' '}
+              <NavLink activeClassName="active" to="/logout">Logout</NavLink>{' '}
             </div>
 
             <div>
@@ -97,6 +98,10 @@ class App extends Component {
               <Route
                 path="/profile"
                 render={(props) => <ProfileView userInfo={this.state.userInfo}/>}
+              />
+              <Route
+                path="/logout"
+                component={About}
               />
             </div>
           </div>
