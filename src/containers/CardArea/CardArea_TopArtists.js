@@ -79,6 +79,8 @@ class CardArea_TopArtists extends Component {
                     key={topArtist.id}
                     topArtist={topArtist}
                     handlePlayPreview={() => this.handlefetchArtistTopTracks}
+                    handleCurrentPlayer={(ev) => this.props.handleCurrentPlayer(ev)}
+                    currentArtistPlaying={this.props.currentArtistPlaying}
                   />
         }))}
 

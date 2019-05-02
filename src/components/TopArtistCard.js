@@ -8,7 +8,10 @@ class TopArtistCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isCorrect: false
+      isCorrect: false,
+      currentArtistPlaying: props.currentArtistPlaying,
+      songPlaying: false,
+      clickedToRemovePlayer: false
     }
   }
 
@@ -19,8 +22,27 @@ class TopArtistCard extends Component {
   /////////////////copied from CardArea_TopArtists
 
   handlefetchArtistTopTracks = (ev) => {
-    let artistSpotifyId = ev.target.alt
-    this.fetchArtistTopTracks(artistSpotifyId)
+    console.log(ev.target.id)
+    let artistJustClicked = ev.target.id
+    let currentArtistPlaying = this.props.currentArtistPlaying
+    console.log(currentArtistPlaying.length)
+
+    if (currentArtistPlaying.length == 0){
+      //start of game. continue as usual
+      let artistSpotifyId = ev.target.alt
+      this.fetchArtistTopTracks(artistSpotifyId)
+    } else if (artistJustClicked == currentArtistPlaying) {
+        //continue as usual
+        let artistSpotifyId = ev.target.alt
+        this.fetchArtistTopTracks(artistSpotifyId)
+    } else if (artistJustClicked != currentArtistPlaying){
+      // destroy that player
+      // this.removePlayPreview(currentArtistPlaying)
+      // continue as usual
+      let artistSpotifyId = ev.target.alt
+      this.fetchArtistTopTracks(artistSpotifyId)
+    }
+
   }
 
   fetchArtistTopTracks = (artistSpotifyId) => {
@@ -52,7 +74,7 @@ class TopArtistCard extends Component {
 
     //add 'a' just as a differentiator when player is rendered
     if (document.getElementById(artistName + 'a').childNodes.length > 0){
-      return this.removePlayPreview(artistName)
+      return this.removePlayPreviewOnClick(artistName)
     }
 
     let image = document.getElementById(artistName)
@@ -69,18 +91,31 @@ class TopArtistCard extends Component {
     let playerDiv = document.getElementById(artistName + 'a')
     playerDiv.appendChild(player)
 
+    this.setState({songPlaying: true})
+
     //remove player if user hasn't clicked to stop
 
-    // setTimeout(() => {this.removePlayPreview(artistName)}, 30000);
+    setTimeout(() => {this.removePlayPreviewAfter30S(artistName)}, 30000);
+
   }
 
-  removePlayPreview = (artistName) => {
+  removePlayPreviewAfter30S = (artistName) => {
+    if (this.state.clickedToRemovePlayer === false) {
+      let elementToRemove = document.getElementById(artistName + '_is_active')
+      elementToRemove.parentNode.removeChild(elementToRemove)
+      let image = document.getElementById(artistName)
+      image.src = "https://dashboard.snapcraft.io/site_media/appmedia/2017/12/spotify-linux-256.png"
+      this.setState({songPlaying: false})
+    }
+  }
+
+  removePlayPreviewOnClick = (artistName) => {
+    this.setState({clickedToRemovePlayer: true})
     let elementToRemove = document.getElementById(artistName + '_is_active')
     elementToRemove.parentNode.removeChild(elementToRemove)
-
     let image = document.getElementById(artistName)
     image.src = "https://dashboard.snapcraft.io/site_media/appmedia/2017/12/spotify-linux-256.png"
-    return console.log('already a player')
+    this.setState({songPlaying: false})
   }
 
 
@@ -91,7 +126,8 @@ class TopArtistCard extends Component {
           id={this.artistName}
           src={"https://dashboard.snapcraft.io/site_media/appmedia/2017/12/spotify-linux-256.png"}
           alt={this.artistSpotifyId}
-          onClick={(ev) => {this.handlefetchArtistTopTracks(ev)}} ///////changing this real quick
+          onClick={
+            (ev) => {this.handlefetchArtistTopTracks(ev); this.props.handleCurrentPlayer(ev)}}
         />
         <html lang="en" dir="ltr">
           <body id={this.artistName + 'a'}>

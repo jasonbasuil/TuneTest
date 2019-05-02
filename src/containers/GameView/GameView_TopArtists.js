@@ -11,6 +11,7 @@ class GameView_TopArtists extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      currentArtistPlaying: '',
       guess: '',
       score: 0
     }
@@ -20,6 +21,13 @@ class GameView_TopArtists extends Component {
     let topArtistNames = this.props.topArtists.items.map((artist => {
       return artist.name.toLowerCase()}))
     return topArtistNames
+  }
+
+  //keep track of which artist is currently playing
+  handleCurrentPlayer = (ev) => {
+    console.log('handling Current Player')
+    let currentArtist = ev.target.id
+    this.setState({currentArtistPlaying: currentArtist})
   }
 
   handleChange = (ev) => {
@@ -73,7 +81,11 @@ class GameView_TopArtists extends Component {
           handleChange={this.handleChange}
           handleGuessSubmit={this.handleGuessSubmit}
         />
-        <CardArea_TopArtists topArtists={this.props.topArtists}/>
+        <CardArea_TopArtists
+          topArtists={this.props.topArtists}
+          handleCurrentPlayer={(ev) => this.handleCurrentPlayer(ev)}
+          currentArtistPlaying={this.state.currentArtistPlaying}
+        />
         <LogView />
         <ScoreView score={this.state.score}/>
       </div>
