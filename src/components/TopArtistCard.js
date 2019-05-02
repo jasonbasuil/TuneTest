@@ -39,8 +39,10 @@ class TopArtistCard extends Component {
     let randomInt = Math.floor(Math.random() * 10)
     let randomTrackPreviewUrl = topTracks.tracks[randomInt].preview_url
 
-    //grabbing artist name and making it match id on <TopArtistCard/>
-    let artistName = topTracks.tracks[randomInt].artists[0].name.toLowerCase()
+    //iterate over topTracks and find the artist that matches artistName
+    let artist = topTracks.tracks[randomInt].artists.find(artist => artist.name.toLowerCase() === this.artistName)
+    let artistName = artist.name.toLowerCase()
+
     this.handlePlayPreview(randomTrackPreviewUrl, artistName)
   }
 
