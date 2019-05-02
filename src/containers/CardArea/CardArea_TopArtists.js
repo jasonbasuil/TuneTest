@@ -6,6 +6,8 @@ const artistTopTracksAPI = 'https://api.spotify.com/v1/artists/' //+ {id}/top-tr
 
 class CardArea_TopArtists extends Component {
 
+  //moved this to TopArtistCard
+
   // handlefetchArtistTopTracks = (ev) => {
   //   let artistSpotifyId = ev.target.alt
   //   this.fetchArtistTopTracks(artistSpotifyId)

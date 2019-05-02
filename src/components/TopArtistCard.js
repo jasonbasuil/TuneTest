@@ -70,6 +70,7 @@ class TopArtistCard extends Component {
     playerDiv.appendChild(player)
 
     //remove player if user hasn't clicked to stop
+
     // setTimeout(() => {this.removePlayPreview(artistName)}, 30000);
   }
 
