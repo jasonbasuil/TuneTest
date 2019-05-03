@@ -86,6 +86,7 @@ class GameView_TopTracks extends Component {
           handleCurrentTrackChosen={(ev) => this.handleCurrentTrackChosen(ev)}
           handleCurrentTrackPlaying={(track) => this.handleCurrentTrackPlaying(track)}
           correctTracks={this.state.correctTracks}
+          currentTrackPlaying={this.state.currentTrackPlaying}
         />
         <LogView />
         <ScoreView score={this.state.score}/>

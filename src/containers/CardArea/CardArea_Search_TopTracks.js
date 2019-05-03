@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-import TopTrackCard from '../../components/TopTrackCard.js'
+import TopTrackCard_Search from '../../components/TopTrackCard_Search.js'
 
 class CardArea_Search_TopTracks extends Component {
 
   //creates audio html element and autoplays it
   handlePlayPreview = (ev) => {
     let trackName = ev.target.id
-
+    
     //add 'a' just as a differentiator when player is rendered
     if (document.getElementById(trackName + 'a').childNodes.length > 0){
       return this.removePlayPreview(ev)
@@ -44,10 +44,10 @@ class CardArea_Search_TopTracks extends Component {
     return (
       <div class="card_row">
         {this.props.topTracks.tracks && this.props.topTracks.tracks.map((topTrack => {
-          return <TopTrackCard
+          return <TopTrackCard_Search
                     key={topTrack.id}
                     topTrack={topTrack}
-                    handlePlayPreview={() => this.handlePlayPreview}
+                    handlePlayPreview={(ev) => this.handlePlayPreview(ev)}
                   />
         }))}
       </div>

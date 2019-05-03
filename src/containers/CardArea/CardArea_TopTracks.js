@@ -16,6 +16,7 @@ class CardArea_TopTracks extends Component {
   handlePlayPreview = (ev) => {
     let trackName = ev.target.id
 
+    //if correct, return
     if (this.props.correctTracks.includes(trackName)) {
       return
     }
@@ -42,6 +43,10 @@ class CardArea_TopTracks extends Component {
     playerDiv.appendChild(player)
 
     this.props.handleCurrentTrackPlaying(trackName)
+
+    // while (this.props.currentTrackPlaying.length > 0){
+    //   setTimeout((ev) => {this.removePlayPreview(ev)}, 30000)
+    // }
   }
 
   removePlayPreview = (ev) => {
@@ -54,9 +59,10 @@ class CardArea_TopTracks extends Component {
     let image = ev.target
     image.src = "https://dashboard.snapcraft.io/site_media/appmedia/2017/12/spotify-linux-256.png"
     return console.log('already a player')
-
-
   }
+
+
+
 
   render() {
     return (
