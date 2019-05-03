@@ -15,7 +15,10 @@ class TopTrackCard extends Component {
           id={this.trackName}
           src={"https://dashboard.snapcraft.io/site_media/appmedia/2017/12/spotify-linux-256.png"}
           alt={this.previewUrl} //this is super hacky
-          onClick={this.props.handlePlayPreview()}
+          onClick={
+            (ev) => {this.props.handlePlayPreview(ev);
+                     this.props.handleCurrentTrackChosen(ev)}
+          }
         />
         <html lang="en" dir="ltr">
           <body id={this.trackName + 'a'}>

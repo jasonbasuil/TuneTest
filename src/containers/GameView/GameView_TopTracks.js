@@ -13,7 +13,10 @@ class GameView_TopTracks extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      currentTrackChosen: '',
+      currentTrackPlaying: '',
       guess: '',
+      correctTracks: [],
       score: 0
     }
   }
@@ -22,6 +25,17 @@ class GameView_TopTracks extends Component {
     let topTrackNames = this.props.topTracks.items.map((track => {
       return track.name.toLowerCase()}))
     return topTrackNames
+  }
+
+  handleCurrentTrackChosen = (ev) => {
+    console.log('track chosen')
+    this.setState({currentTrackChosen: ev.target.id})
+  }
+
+  handleCurrentTrackPlaying = (track) => {
+    console.log('playing track')
+    console.log(track)
+    this.setState({currentTrackPlaying: track})
   }
 
   handleChange = (ev) => {
@@ -35,6 +49,9 @@ class GameView_TopTracks extends Component {
     console.log(topTrackNames)
     if (topTrackNames.includes(this.state.guess.toLowerCase())){
       console.log('correct!')
+
+      this.setState({correctTracks: [...this.state.correctTracks, this.state.guess.toLowerCase()] })
+
       this.setState({score: this.state.score + 200})
       //change an artist card's view to "showing"
       //grab this.artistName
@@ -64,7 +81,12 @@ class GameView_TopTracks extends Component {
           guess={this.state.guess}
           handleChange={this.handleChange}
           handleGuessSubmit={this.handleGuessSubmit}/>
-        <CardArea_TopTracks topTracks={this.props.topTracks}/>
+        <CardArea_TopTracks
+          topTracks={this.props.topTracks}
+          handleCurrentTrackChosen={(ev) => this.handleCurrentTrackChosen(ev)}
+          handleCurrentTrackPlaying={(track) => this.handleCurrentTrackPlaying(track)}
+          correctTracks={this.state.correctTracks}
+        />
         <LogView />
         <ScoreView score={this.state.score}/>
       </div>

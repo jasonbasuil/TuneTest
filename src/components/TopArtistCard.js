@@ -9,7 +9,7 @@ class TopArtistCard extends Component {
     super(props);
     this.state = {
       isCorrect: false,
-      currentArtistPlaying: props.currentArtistPlaying,
+      currentArtistPlaying: '',
       songPlaying: false,
       clickedToRemovePlayer: false
     }
@@ -91,8 +91,9 @@ class TopArtistCard extends Component {
     let playerDiv = document.getElementById(artistName + 'a')
     playerDiv.appendChild(player)
 
-    this.setState({songPlaying: true})
-
+    this.setState({songPlaying: true,
+                   currentArtistPlaying: this.props.currentArtistPlaying})
+  
     //remove player if user hasn't clicked to stop
 
     setTimeout(() => {this.removePlayPreviewAfter30S(artistName)}, 30000);
@@ -105,7 +106,9 @@ class TopArtistCard extends Component {
       elementToRemove.parentNode.removeChild(elementToRemove)
       let image = document.getElementById(artistName)
       image.src = "https://dashboard.snapcraft.io/site_media/appmedia/2017/12/spotify-linux-256.png"
+
       this.setState({songPlaying: false})
+      this.setState({currentArtistPlaying: ''})
     }
   }
 
@@ -115,7 +118,9 @@ class TopArtistCard extends Component {
     elementToRemove.parentNode.removeChild(elementToRemove)
     let image = document.getElementById(artistName)
     image.src = "https://dashboard.snapcraft.io/site_media/appmedia/2017/12/spotify-linux-256.png"
+
     this.setState({songPlaying: false})
+    this.setState({currentArtistPlaying: ''})
   }
 
 
