@@ -52,7 +52,7 @@ class GameView_TopTracks extends Component {
 
       this.setState({correctTracks: [...this.state.correctTracks, this.state.guess.toLowerCase()] })
 
-      this.setState({score: this.state.score + 200})
+      this.setState({score: this.state.score + 1000})
       //change an artist card's view to "showing"
       //grab this.artistName
       this.showAlbumCover()
