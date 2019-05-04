@@ -5,9 +5,11 @@ class Profile extends Component {
   render() {
     return (
       <div>
-        <h2>We're in Profile!</h2>
-        <p>Username: {this.props.user.display_name}</p>
-        <a href={this.props.user.href}>Open Your Spotify Account</a>
+        <h2>Welcome back, {this.props.user.display_name}</h2>
+        <img src={this.props.user.images[0] ? this.props.user.images[0].url : null}/>
+        <p>Follower count: {this.props.user.followers.total}</p>
+        
+        <a href={this.props.user.external_urls.spotify}>Open Your Spotify Account</a>
       </div>
     )
   }

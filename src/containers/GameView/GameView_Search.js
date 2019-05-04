@@ -103,6 +103,8 @@ class GameView_Search extends Component {
 
   handleArtistSelect = (ev) => {
     this.fetchNewArtistsTopTracks(ev)
+    let target = document.getElementById('click_artist_to_begin')
+    target.parentNode.removeChild(target)
   }
 
   fetchNewArtistsTopTracks = (ev) => {
@@ -129,6 +131,7 @@ class GameView_Search extends Component {
           handleNewArtistSubmit={this.handleNewArtistSubmit}
           handleArtistChange={this.handleArtistChange}
         />
+        <br/>
         <GameView_Search_Artists
           artists={this.state.artists}
           handleArtistSelect={this.handleArtistSelect}
@@ -136,6 +139,7 @@ class GameView_Search extends Component {
         <CardArea_Search_TopTracks
           topTracks={this.state.selectedArtistTopTracks}
         />
+        <br/>
         <GuessForm
           guess={this.state.guess}
           handleChange={this.handleChange}

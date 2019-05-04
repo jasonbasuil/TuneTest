@@ -25,7 +25,7 @@ h4 {
   letter-spacing: -1px;
   line-height: 50px;
   text-transform: none;
-  color: #000000;
+  color: #FFFFFF;
 }
 
 p {
@@ -39,6 +39,17 @@ p {
   color: #000000;
 }
 
+.logo {
+  font-family: Circular, Helvetica, Arial, sans-serif;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 5px;
+  line-height: 50px;
+  text-transform: none;
+  color: #FFFFFF;
+}
+
 .navbar {
   font-family: Circular, Helvetica, Arial, sans-serif;
   font-size: 24px;
@@ -47,7 +58,7 @@ p {
   letter-spacing: 5px;
   line-height: 50px;
   text-transform: none;
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .card_row {
@@ -71,6 +82,18 @@ p {
   height: 36px;
   font-size: 100%;
 }
+
+.click-artist {
+  flex: 33.33%;
+  padding: 5px;
+  transition: transform .2s;
+}
+
+.click-artist:hover {
+  transform: scale(1.1)
+}
+
+
 
 .guess_form {
   width: 30%;

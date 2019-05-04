@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import logo from '../assets/LogoMakr_0m1q2k.png'
 
 const usersAPI = 'http://localhost:3000/api/v1/users/2'
 
@@ -38,9 +39,10 @@ class About extends Component {
   render() {
     return (
       <div>
-        <h2>This is the About page!</h2>
-        <h5>It will describe what the application is and how to use it.</h5>
-        <p>A user gets redirected here after initial login with Spotify</p>
+        <h1 class='logo'>TUNETEST</h1>
+        
+        <h2>How well do you know your own favorite music?</h2>
+        <h5>Select from three different games above.</h5>
       </div>
     )
   }
