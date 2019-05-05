@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import GuessForm from '../../components/GuessForm.js'
 import GameStart from '../../components/GameStart.js'
+import Progress from '../../components/Progress.js'
 import CardArea_TopTracks from '../CardArea/CardArea_TopTracks.js'
 import LogView from '../LogView/LogView.js'
 import ScoreView from '../ScoreView/ScoreView.js'
@@ -81,7 +82,13 @@ class GameView_TopTracks extends Component {
         <GuessForm
           guess={this.state.guess}
           handleChange={this.handleChange}
-          handleGuessSubmit={this.handleGuessSubmit}/>
+          handleGuessSubmit={this.handleGuessSubmit}
+        />
+        <br/>
+        <Progress
+          currentTrackChosen={this.state.currentTrackChosen}
+          guess={this.state.guess}
+          />
         <CardArea_TopTracks
           topTracks={this.props.topTracks}
           handleCurrentTrackChosen={(ev) => this.handleCurrentTrackChosen(ev)}
