@@ -1,14 +1,62 @@
-
 .window {
   height: 100%;
   text-align: center;
-  background-color: #a40606;
-  background-image: linear-gradient(315deg, #a40606 0%, #d98324 74%);
+  background-color: #d4418e;
+  background-image: linear-gradient(315deg, #d4418e 0%, #0652c5 74%);
+}
+
+.happy {
+  height: 100%;
+  text-align: center;
+  background-color: #bf033b;
+  background-image: linear-gradient(315deg, #bf033b 0%, #ffc719 74%);
+}
+
+.sad {
+  height: 100%;
+  text-align: center;
+  background-color: #0cbaba;
+  background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+}
+
+.wink {
+  height: 100%;
+  text-align: center;
+  background-color: #861657;
+  background-image: linear-gradient(326deg, #861657 0%, #ffa69e 74%);
+}
+
+.sick {
+  height: 100%;
+  text-align: center;
+  background-color: #63d471;
+  background-image: linear-gradient(315deg, #63d471 0%, #233329 74%);
+}
+
+.mad {
+  height: 100%;
+  text-align: center;
+  background-color: #3f0d12;
+  background-image: linear-gradient(315deg, #3f0d12 0%, #a71d31 74%);
+}
+
+.love {
+  height: 100%;
+  text-align: center;
+  background-color: #d19592;
+  background-image: linear-gradient(315deg, #d19592 0%, #c81f70 74%);
+}
+
+.mood-bar {
+  display: flex;
+  flex-shrink: 0;
+  font-size: 40px;
+  justify-content: space-evenly;
 }
 
 h1 {
   font-family: Circular, Helvetica, Arial, sans-serif;
-  font-size: 50px;
+  font-size: 80px;
   font-style: normal;
   font-weight: bold;
   letter-spacing: -1px;
@@ -36,7 +84,8 @@ p {
   letter-spacing: 5px;
   line-height: 50px;
   text-transform: none;
-  color: #000000;
+  color: #FFFFFF;
+  opacity: .7;
 }
 
 .progress-bar {
@@ -86,6 +135,7 @@ p {
 
 .card_column:hover {
   transform: scale(1.09);
+  border-color: #FFFFFF;
 }
 
 .artist_submit {
@@ -104,12 +154,41 @@ p {
   transform: scale(1.1)
 }
 
+.hint_button {
+  font-family: Circular, Helvetica, Arial, sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  text-align: center;
+  border-radius: 4px;
+  letter-spacing: -1px;
+  transition: transform .2s;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.hint_button:hover {
+  transform: scale(1.09);
+  border-color: #FFFFFF
+}
 
 
 .guess_form {
+  background-color: transparent;
+  border-left: none;
+  border-top: none;
+  border-right: none;
   width: 30%;
-  height: 30px;
-  font-size: 100%;
+  height: 65px;
+  font-family: Circular, Helvetica, Arial, sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 50px;
+  text-align: center;
+  text-transform: none;
+  opacity: 0.8;
+  color: #FFFFFF;
 }
 
 .guess_submit {

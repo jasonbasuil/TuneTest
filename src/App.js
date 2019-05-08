@@ -25,7 +25,8 @@ class App extends Component {
       in_artist: 'yes we can!',
       topArtists: [],
       topTracks: [],
-      userInfo: []
+      userInfo: [],
+      mood: ''
     }
   }
 
@@ -33,6 +34,52 @@ class App extends Component {
     this.fetchTopArtists()
     this.fetchTopTracks()
     this.fetchUserProfile()
+
+    //setting moods
+    let happy = document.getElementById('happy')
+    happy.addEventListener('click', () => {this.changeMood('happy')})
+
+    let sad = document.getElementById('sad')
+    sad.addEventListener('click', () => {this.changeMood('sad')})
+
+    let wink = document.getElementById('wink')
+    wink.addEventListener('click', () => {this.changeMood('wink')})
+
+    let sick = document.getElementById('sick')
+    sick.addEventListener('click', () => {this.changeMood('sick')})
+
+    let mad = document.getElementById('mad')
+    mad.addEventListener('click', () => {this.changeMood('mad')})
+
+    let love = document.getElementById('love')
+    love.addEventListener('click', () => {this.changeMood('love')})
+  }
+
+  changeMood = (mood) => {
+
+    let window = document.querySelector('html')
+    if (this.state.mood.length === 0) {
+      window.classList.remove('window')
+      window.classList.add(mood)
+      this.setState({mood: mood })
+    } else if (this.state.mood.length > 0) {
+      window.classList.remove(this.state.mood)
+      window.classList.add(mood)
+      this.setState({mood: mood })
+    }
+  }
+
+
+  changeHappy = () => {
+    let window = document.querySelector('html')
+    window.classList.remove('window')
+    window.classList.add('happy')
+  }
+
+  changeSad = () => {
+    let window = document.querySelector('html')
+    window.classList.remove('window')
+    window.classList.add('sad')
   }
 
   fetchTopArtists = () => {
@@ -111,6 +158,26 @@ class App extends Component {
             </div>
           </div>
         </Router>
+        <div class='mood-bar'>
+          <mood id='happy'>
+            😁
+          </mood>
+          <mood id='sad'>
+            😔
+          </mood>
+          <mood id='wink'>
+            😜
+          </mood>
+          <mood id='sick'>
+            🤢
+          </mood>
+          <mood id='mad'>
+            😡
+          </mood>
+          <mood id='love'>
+            😍
+          </mood>
+        </div>
       </div>
   );
 }

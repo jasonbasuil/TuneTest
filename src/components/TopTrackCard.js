@@ -7,6 +7,13 @@ class TopTrackCard extends Component {
   trackName = this.props.topTrack.name.toLowerCase()
   previewUrl = this.props.topTrack.preview_url
 
+  revealHint = () => {
+    let hint = document.getElementById(this.trackName + '_hint_div')
+    if (hint.style.display === 'block') {
+      hint.style.display = 'none'
+    } else { hint.style.display = 'block' }
+  }
+
   render() {
     return (
       <div>
@@ -20,6 +27,12 @@ class TopTrackCard extends Component {
                      this.props.handleCurrentTrackChosen(ev)}
           }
         />
+        <button class='hint_button' onClick={() => this.revealHint()}>🤔</button>
+        <div id={this.trackName + '_hint_div'} style={{display: 'none'}}>
+          {this.trackName}
+        </div>
+        <br/>
+        <br/>
         <html lang="en" dir="ltr">
           <body id={this.trackName + 'a'}>
 

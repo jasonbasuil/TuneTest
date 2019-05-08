@@ -85,10 +85,6 @@ class GameView_TopTracks extends Component {
           handleGuessSubmit={this.handleGuessSubmit}
         />
         <br/>
-        <Progress
-          currentTrackChosen={this.state.currentTrackChosen}
-          guess={this.state.guess}
-          />
         <CardArea_TopTracks
           topTracks={this.props.topTracks}
           handleCurrentTrackChosen={(ev) => this.handleCurrentTrackChosen(ev)}

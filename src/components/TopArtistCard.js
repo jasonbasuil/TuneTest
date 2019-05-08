@@ -93,7 +93,7 @@ class TopArtistCard extends Component {
 
     this.setState({songPlaying: true,
                    currentArtistPlaying: this.props.currentArtistPlaying})
-  
+
     //remove player if user hasn't clicked to stop
 
     setTimeout(() => {this.removePlayPreviewAfter30S(artistName)}, 30000);
@@ -123,23 +123,35 @@ class TopArtistCard extends Component {
     this.setState({currentArtistPlaying: ''})
   }
 
+  revealHint = () => {
+    let hint = document.getElementById(this.artistName + '_hint_div')
+    if (hint.style.display === 'block') {
+      hint.style.display = 'none'
+    } else { hint.style.display = 'block' }
+  }
+
 
   render() {
     return (
-      <div class="card_column">
+      <div>
         <img
+          class="card_column"
           id={this.artistName}
           src={"https://dashboard.snapcraft.io/site_media/appmedia/2017/12/spotify-linux-256.png"}
           alt={this.artistSpotifyId}
           onClick={
             (ev) => {this.handlefetchArtistTopTracks(ev); this.props.handleCurrentPlayer(ev)}}
         />
+        <button class='hint_button' onClick={() => this.revealHint()}>🤔</button>
+        <div id={this.artistName + '_hint_div'} style={{display: 'none'}}>
+          {this.artistName}
+        </div>
         <html lang="en" dir="ltr">
           <body id={this.artistName + 'a'}>
 
           </body>
         </html>
-        <h4>{this.artistName}</h4>
+        <h4></h4>
       </div>
     )
   }

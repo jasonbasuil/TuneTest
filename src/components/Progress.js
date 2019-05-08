@@ -9,14 +9,14 @@ class Progress extends Component {
     }
   }
 
+  //not using for now
   componentDidMount() {
-    this.checkGuess()
+    // this.checkGuess()
   }
 
   checkGuess = () => {
     return document.addEventListener('keydown', ev => {
       if (this.props.guess && this.props.currentTrackChosen) {
-        console.log('yes sirreee')
         let progress = document.getElementsByClassName('progress-bar')
 
         let trackIndex = this.props.currentTrackChosen.length - 1
@@ -42,3 +42,9 @@ class Progress extends Component {
 }
 
 export default Progress
+
+// removing for now (from GameView_TopTracks)
+// <Progress
+//   currentTrackChosen={this.state.currentTrackChosen}
+//   guess={this.state.guess}
+//   />

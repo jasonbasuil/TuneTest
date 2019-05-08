@@ -56,7 +56,7 @@ class GameView_Search extends Component {
     console.log(topTrackNames)
     if (topTrackNames.includes(this.state.guess.toLowerCase())){
       console.log('correct!')
-      this.setState({score: this.state.score + 200})
+      this.setState({score: this.state.score + 1000})
       //change an artist card's view to "showing"
       //grab this.artistName
       this.showAlbumCover()
