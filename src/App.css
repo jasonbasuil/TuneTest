@@ -47,10 +47,18 @@
   background-image: linear-gradient(315deg, #d19592 0%, #c81f70 74%);
 }
 
+.dead {
+  height: 100%;
+  text-align: center;
+  background-color: #485461;
+  background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+}
+
 .mood-bar {
   display: flex;
   flex-shrink: 0;
   font-size: 40px;
+  align-items: flex-end;
   justify-content: space-evenly;
 }
 
@@ -101,7 +109,7 @@ p {
 
 .logo {
   font-family: Circular, Helvetica, Arial, sans-serif;
-  font-size: 70px;
+  font-size: 120px;
   font-style: normal;
   font-weight: bold;
   letter-spacing: 5px;
@@ -145,7 +153,8 @@ p {
 }
 
 .click-artist {
-  flex: 33.33%;
+  height: 330px;
+  width: 330px;
   padding: 5px;
   transition: transform .2s;
 }
@@ -169,6 +178,17 @@ p {
 .hint_button:hover {
   transform: scale(1.09);
   border-color: #FFFFFF
+}
+
+.score {
+  font-family: Circular, Helvetica, Arial, sans-serif;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 50px;
+  text-transform: none;
+  color: #FFFFFF;
 }
 
 

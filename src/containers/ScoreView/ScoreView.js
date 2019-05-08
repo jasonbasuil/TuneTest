@@ -5,7 +5,7 @@ class ScoreView extends Component {
   render() {
     return (
       <div>
-        <h2>Score: {this.props.score}</h2>
+        <h2 class='score'>Score: {this.props.score}</h2>
       </div>
     )
   }

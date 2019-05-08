@@ -53,6 +53,9 @@ class App extends Component {
 
     let love = document.getElementById('love')
     love.addEventListener('click', () => {this.changeMood('love')})
+
+    let dead = document.getElementById('dead')
+    dead.addEventListener('click', () => {this.changeMood('dead')})
   }
 
   changeMood = (mood) => {
@@ -176,6 +179,9 @@ class App extends Component {
           </mood>
           <mood id='love'>
             😍
+          </mood>
+          <mood id='dead'>
+            👻
           </mood>
         </div>
       </div>

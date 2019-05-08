@@ -103,8 +103,8 @@ class GameView_Search extends Component {
 
   handleArtistSelect = (ev) => {
     this.fetchNewArtistsTopTracks(ev)
-    let target = document.getElementById('click_artist_to_begin')
-    target.parentNode.removeChild(target)
+    // let target = document.getElementById('click_artist_to_begin')
+    // target.parentNode.removeChild(target)
   }
 
   fetchNewArtistsTopTracks = (ev) => {
