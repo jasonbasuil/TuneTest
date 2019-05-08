@@ -57,9 +57,14 @@
 .mood-bar {
   display: flex;
   flex-shrink: 0;
-  font-size: 40px;
+  font-size: 45px;
   align-items: flex-end;
   justify-content: space-evenly;
+}
+
+.mood:hover {
+  transform: scale(1.3);
+  border-color: #FFFFFF
 }
 
 h1 {
@@ -119,11 +124,19 @@ p {
 }
 
 .navbar {
+  display: flex;
+  font-size: 24px;
+  font-weight: bold;
+  justify-content: space-around;
+  color: #FFFFFF;
+}
+
+.nav {
   font-family: Circular, Helvetica, Arial, sans-serif;
   font-size: 24px;
   font-style: normal;
-  font-weight: bold;
-  letter-spacing: 5px;
+  font-weight: normal;
+  letter-spacing: 7px;
   line-height: 50px;
   text-transform: none;
   color: #FFFFFF;

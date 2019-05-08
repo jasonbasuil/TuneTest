@@ -128,7 +128,7 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
-            <div class="navbar">
+            <div class='navbar'>
               <NavLink activeClassName="active" exact to="/app">Home</NavLink>{' '}
               <NavLink activeClassName="active" to="/top-artists">Top Artists</NavLink>{' '}
               <NavLink activeClassName="active" to="/top-tracks">Top Tracks</NavLink>{' '}
@@ -162,25 +162,25 @@ class App extends Component {
           </div>
         </Router>
         <div class='mood-bar'>
-          <mood id='happy'>
+          <mood class='mood' id='happy'>
             😁
           </mood>
-          <mood id='sad'>
+          <mood class='mood' id='sad'>
             😔
           </mood>
-          <mood id='wink'>
+          <mood class='mood' id='wink'>
             😜
           </mood>
-          <mood id='sick'>
+          <mood class='mood' id='sick'>
             🤢
           </mood>
-          <mood id='mad'>
+          <mood class='mood' id='mad'>
             😡
           </mood>
-          <mood id='love'>
+          <mood class='mood' id='love'>
             😍
           </mood>
-          <mood id='dead'>
+          <mood class='mood' id='dead'>
             👻
           </mood>
         </div>
