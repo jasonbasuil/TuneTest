@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../assets/LogoMakr_0m1q2k.png'
+import logo from '../assets/LogoMakr_3JAwUM.png'
 
 const usersAPI = 'http://localhost:3000/api/v1/users/2'
 
@@ -40,6 +40,7 @@ class About extends Component {
     return (
       <div>
         <h1 class='logo'>TUNETEST</h1>
+        <img src={logo}/>
 
         <h2>How well do you know your own favorite music?</h2>
         <h5>Test your music knowledge by playing any of the games above.</h5>
