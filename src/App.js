@@ -169,7 +169,7 @@ class App extends Component {
             😔
           </mood>
           <mood class='mood' id='wink'>
-            😜
+            🦄
           </mood>
           <mood class='mood' id='sick'>
             🤢
@@ -178,7 +178,7 @@ class App extends Component {
             😡
           </mood>
           <mood class='mood' id='love'>
-            😍
+            🧜‍♀️
           </mood>
           <mood class='mood' id='dead'>
             👻

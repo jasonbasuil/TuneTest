@@ -40,9 +40,12 @@ class About extends Component {
     return (
       <div>
         <h1 class='logo'>TUNETEST</h1>
-        
+
         <h2>How well do you know your own favorite music?</h2>
-        <h5>Select from three different games above.</h5>
+        <h5>Test your music knowledge by playing any of the games above.</h5>
+
+        <p>Change your mood</p>
+
       </div>
     )
   }

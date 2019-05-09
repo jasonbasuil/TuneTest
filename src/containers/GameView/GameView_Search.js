@@ -136,14 +136,14 @@ class GameView_Search extends Component {
           artists={this.state.artists}
           handleArtistSelect={this.handleArtistSelect}
         />
-        <CardArea_Search_TopTracks
-          topTracks={this.state.selectedArtistTopTracks}
-        />
-        <br/>
         <GuessForm
           guess={this.state.guess}
           handleChange={this.handleChange}
           handleGuessSubmit={this.handleGuessSubmit}
+        />
+        <br/>
+        <CardArea_Search_TopTracks
+          topTracks={this.state.selectedArtistTopTracks}
         />
         <ScoreView score={this.state.score}/>
       </div>

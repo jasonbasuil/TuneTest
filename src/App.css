@@ -8,29 +8,29 @@
 .happy {
   height: 100%;
   text-align: center;
-  background-color: #bf033b;
-  background-image: linear-gradient(315deg, #bf033b 0%, #ffc719 74%);
+  background-color: #f2dd6e;
+  background-image: linear-gradient(319deg, #f2dd6e 0%, #cff27e 37%, #ef959d 100%);
 }
 
 .sad {
   height: 100%;
   text-align: center;
-  background-color: #0cbaba;
-  background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #04619f 74%);
 }
 
 .wink {
   height: 100%;
   text-align: center;
-  background-color: #861657;
-  background-image: linear-gradient(326deg, #861657 0%, #ffa69e 74%);
+  background-color: #91d370;
+  background-image: linear-gradient(319deg, #91d370 0%, #bca0ff 37%, #f2cd54 100%);
 }
 
 .sick {
   height: 100%;
   text-align: center;
-  background-color: #63d471;
-  background-image: linear-gradient(315deg, #63d471 0%, #233329 74%);
+  background-color: #f2cf43;
+  background-image: linear-gradient(315deg, #f2cf43 0%, #19a186 74%);
 }
 
 .mad {
@@ -43,8 +43,9 @@
 .love {
   height: 100%;
   text-align: center;
-  background-color: #d19592;
-  background-image: linear-gradient(315deg, #d19592 0%, #c81f70 74%);
+  background-color: #118ab2;
+  background-image: linear-gradient(319deg, #118ab2 0%, #06d6a0 37%, #ffd166 100%);
+
 }
 
 .dead {
@@ -123,6 +124,11 @@ p {
   color: #FFFFFF;
 }
 
+.profile {
+  border-radius: 150px;
+  height: 200px
+}
+
 .navbar {
   display: flex;
   font-size: 24px;
@@ -146,17 +152,22 @@ p {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
+
 }
 
 .card_column {
   flex: 33.33%;
-  padding: 5px;
+  height: 265.99px;
+  width: 265.99px;
+  border-radius: 8px;
+  margin: 7px;
   transition: transform .2s;
 }
 
 .card_column:hover {
-  transform: scale(1.09);
+  transform: scale(1.05);
   border-color: #FFFFFF;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
 .artist_submit {
@@ -168,12 +179,13 @@ p {
 .click-artist {
   height: 330px;
   width: 330px;
-  padding: 5px;
+  border-radius: 7px;
   transition: transform .2s;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
 .click-artist:hover {
-  transform: scale(1.1)
+  transform: scale(1.07)
 }
 
 .hint_button {
@@ -210,7 +222,7 @@ p {
   border-left: none;
   border-top: none;
   border-right: none;
-  width: 30%;
+  width: 50%;
   height: 65px;
   font-family: Circular, Helvetica, Arial, sans-serif;
   font-size: 50px;
