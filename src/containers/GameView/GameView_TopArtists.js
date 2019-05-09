@@ -81,6 +81,7 @@ class GameView_TopArtists extends Component {
           handleChange={this.handleChange}
           handleGuessSubmit={this.handleGuessSubmit}
         />
+        <br/>
         <CardArea_TopArtists
           topArtists={this.props.topArtists}
           handleCurrentPlayer={(ev) => this.handleCurrentPlayer(ev)}

@@ -103,8 +103,10 @@ class GameView_Search extends Component {
 
   handleArtistSelect = (ev) => {
     this.fetchNewArtistsTopTracks(ev)
-    // let target = document.getElementById('click_artist_to_begin')
-    // target.parentNode.removeChild(target)
+    let target = document.getElementById('insert-guess')
+    if (target.innerHTML.length > 0) {
+      target.innerHTML = 'Guess a track name:'
+    }
   }
 
   fetchNewArtistsTopTracks = (ev) => {
@@ -136,6 +138,9 @@ class GameView_Search extends Component {
           artists={this.state.artists}
           handleArtistSelect={this.handleArtistSelect}
         />
+        <p id='insert-guess'>
+          <div></div>
+        </p>
         <GuessForm
           guess={this.state.guess}
           handleChange={this.handleChange}
