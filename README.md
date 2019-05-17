@@ -12,7 +12,7 @@ DEMO: https://player.vimeo.com/video/336705911
 
 **Guess your Top Tracks**
 <br><br>
-![](https://media.giphy.com/media/dJnRiGdSQhYLQ80HTt/giphy.webp)
+![](https://media.giphy.com/media/2tKzor0686bKX12ENP/giphy.gif)
 
 **Search for a new artist and guess their Top Tracks**
 <br><br>
