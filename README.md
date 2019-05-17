@@ -1,8 +1,8 @@
 #  TuneTest
 
-DEMO: https://player.vimeo.com/video/336705911
+**DEMO:** https://player.vimeo.com/video/336705911
 
-Technologies:
+**Technologies:**
 - React 
 - Ruby on Rails
 - Postgresql
