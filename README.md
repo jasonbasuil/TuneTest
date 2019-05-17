@@ -11,6 +11,8 @@ DEMO: https://player.vimeo.com/video/336705911
 ![](https://media.giphy.com/media/9PiwnFuv7bstBHbQZX/giphy.webp)
 
 **Guess your Top Tracks**
+<br><br>
+![](https://media.giphy.com/media/dJnRiGdSQhYLQ80HTt/giphy.webp)
 
 **Search for a new artist and guess their Top Tracks**
 <br><br>
